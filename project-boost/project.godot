@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-config/name="LearningGodot"
-run/main_scene="uid://nmd31tvd7lly"
+config/name="ProjectBoost"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
