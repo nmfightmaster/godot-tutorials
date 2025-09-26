@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if "Goal" in body.get_groups():
-		complete_level()
+		complete_level(body.file_path) # will throw error if no file_path variable
 	if "Hazard" in body.get_groups():
 		crash_sequence()
 
@@ -26,6 +26,6 @@ func crash_sequence() -> void:
 	print("KABOOM!")
 	get_tree().call_deferred("reload_current_scene")
 
-func complete_level() -> void:
+func complete_level(next_level: String) -> void:
 	print("Level Complete!")
-	get_tree().quit()
+	get_tree().call_deferred("change_scene_to_file", next_level)
